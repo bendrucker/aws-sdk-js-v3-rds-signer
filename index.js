@@ -9,7 +9,7 @@ const signing = {
 }
 
 export class Signer {
-  constructor({credentials, hostname, port, region, username} = {}) {
+  constructor ({ credentials, hostname, port, region, username } = {}) {
     this.credentials = credentials
     this.hostname = hostname
     this.port = port
@@ -17,20 +17,20 @@ export class Signer {
     this.username = username
   }
 
-  async getAuthToken({
+  async getAuthToken ({
     hostname = this.hostname,
     port = this.port,
     username = this.username,
     region = this.region,
     credentials = this.credentials
-  } = {}) {  
+  } = {}) {
     const signer = new SignatureV4({
       service: 'rds-db',
       region,
       credentials,
       sha256: Hash.bind(null, 'sha256')
     })
-  
+
     const request = new HttpRequest({
       method: 'GET',
       protocol: signing.protocol,
@@ -41,15 +41,14 @@ export class Signer {
         DBUser: username
       },
       headers: {
-        host: `${hostname}:${port}`,
+        host: `${hostname}:${port}`
       }
     })
-  
+
     const presigned = await signer.presign(request, {
       expiresIn: 900
     })
-  
-    return formatUrl(presigned).replace(`${protocol}://`, '')
+
+    return formatUrl(presigned).replace(`${request.protocol}://`, '')
   }
 }
-
