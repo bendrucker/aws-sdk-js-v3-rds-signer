@@ -1,3 +1,4 @@
+import { defaultProvider } from '@aws-sdk/credential-provider-node'
 import { HttpRequest } from '@aws-sdk/protocol-http'
 import { SignatureV4 } from '@aws-sdk/signature-v4'
 import { Hash } from '@aws-sdk/hash-node'
@@ -10,7 +11,7 @@ const signing = {
 
 export class Signer {
   constructor ({ credentials, hostname, port, region, username } = {}) {
-    this.credentials = credentials
+    this.credentials = credentials || defaultProvider()
     this.hostname = hostname
     this.port = port
     this.region = region

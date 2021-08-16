@@ -9,6 +9,7 @@
     "test": "standard && tap && tsd"
   },
   "dependencies": {
+    "@aws-sdk/credential-provider-node": "^3.26.0",
     "@aws-sdk/hash-node": "3",
     "@aws-sdk/protocol-http": "3",
     "@aws-sdk/signature-v4": "3",

@@ -51,3 +51,25 @@ tap.test('override options', async t => {
   t.equal(url.searchParams.get('Action'), 'connect', 'action should be connect')
   t.equal(url.searchParams.get('DBUser'), 'me', 'username should be set')
 })
+
+tap.test('default credential provider', async t => {
+  const signer = new Signer({
+    hostname: 'host',
+    port: 5432,
+    region: 'us-east-1',
+    username: 'me'
+  })
+
+  try {
+    process.env.AWS_ACCESS_KEY_ID = 'env_id'
+    process.env.AWS_SECRET_ACCESS_KEY = 'env_secret'
+
+    const token = await signer.getAuthToken()
+    const url = new URL(`protocol://${token}`)
+
+    t.ok(url.searchParams.get('X-Amz-Credential').startsWith('env_id'), 'should source credentials from default provider')
+  } finally {
+    delete process.env.AWS_ACCESS_KEY_ID
+    delete process.env.AWS_SECRET_ACCESS_KEY
+  }
+})
