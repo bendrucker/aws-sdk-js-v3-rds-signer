@@ -18,6 +18,7 @@ tap.test('Signer', async t => {
 
   t.ok(token.startsWith('host:5432'), 'protocol should be stripped')
   t.ok(token.includes('us-east-1'), 'region should be included')
+  t.ok(token.includes('rds-db'), 'service should be included')
 
   const url = new URL(`protocol://${token}`)
 
