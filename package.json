@@ -1,0 +1,27 @@
+{
+  "name": "aws-sdk-js-v3-rds-signer",
+  "version": "1.0.0",
+  "description": "An AWS IAM database authentication token signer for RDS, implementing RDS.Signer for AWS SDK for JS v3",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bendrucker/aws-sdk-js-v3-rds-signer.git"
+  },
+  "keywords": [
+    "aws",
+    "rds",
+    "sdk",
+    "iam",
+    "signer",
+    "v3"
+  ],
+  "author": "Ben Drucker <bvdrucker@gmail.com> (https://www.bendrucker.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bendrucker/aws-sdk-js-v3-rds-signer/issues"
+  },
+  "homepage": "https://github.com/bendrucker/aws-sdk-js-v3-rds-signer#readme"
+}
