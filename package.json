@@ -6,7 +6,7 @@
   "exports": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "test": "standard && node test.js && tsd"
+    "test": "standard && tap && tsd"
   },
   "peerDependencies": {
     "@aws-sdk/hash-node": "3",
@@ -34,7 +34,9 @@
   },
   "homepage": "https://github.com/bendrucker/aws-sdk-js-v3-rds-signer#readme",
   "devDependencies": {
+    "@types/tap": "^15.0.5",
     "standard": "^16.0.3",
+    "tap": "^15.0.9",
     "tsd": "^0.17.0"
   }
 }

@@ -49,6 +49,6 @@ export class Signer {
       expiresIn: 900
     })
 
-    return formatUrl(presigned).replace(`${request.protocol}://`, '')
+    return formatUrl(presigned).replace(`${presigned.protocol}//`, '')
   }
 }
