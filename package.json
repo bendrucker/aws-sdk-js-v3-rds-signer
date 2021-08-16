@@ -34,6 +34,11 @@
   },
   "homepage": "https://github.com/bendrucker/aws-sdk-js-v3-rds-signer#readme",
   "devDependencies": {
+    "@aws-sdk/hash-node": "3",
+    "@aws-sdk/protocol-http": "3",
+    "@aws-sdk/signature-v4": "3",
+    "@aws-sdk/types": "3",
+    "@aws-sdk/util-format-url": "3",
     "@types/tap": "^15.0.5",
     "standard": "^16.0.3",
     "tap": "^15.0.9",
