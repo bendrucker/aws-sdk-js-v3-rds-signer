@@ -6,6 +6,12 @@
   "scripts": {
     "test": "node test.js"
   },
+  "peerDependencies": {
+    "@aws-sdk/hash-node": "3",
+    "@aws-sdk/protocol-http": "3",
+    "@aws-sdk/signature-v4": "3",
+    "@aws-sdk/util-format-url": "3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bendrucker/aws-sdk-js-v3-rds-signer.git"
