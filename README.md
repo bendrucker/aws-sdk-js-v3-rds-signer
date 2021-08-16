@@ -31,6 +31,10 @@ console.log(token)
 
 All options supported by the `Signer` constructor are also supported by the `getAuthToken` method and will override the instance options for a specific token.
 
+## Background
+
+An [`RDS.Signer`](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/RDS/Signer.html) class was included in the AWS SDK for JS v2. At the time this package was authored/published, [v3 did not provide a high level `Signer` implementation](https://github.com/aws/aws-sdk-js-v3/issues/1823). This package implements one using the low level packages from SDK v3. If/when this functionality is included natively in the SDK, this package will be deprecated in favor of the official Amazon implementation.
+
 ## License
 
 MIT © [Ben Drucker](http://bendrucker.me)
